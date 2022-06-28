@@ -7,7 +7,7 @@
   
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('/img/post-bg.jpg')">
+  <header class="masthead" style="background-image: url('<%= post.image %>')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -20,6 +20,12 @@
               <a href="#">Start Bootstrap</a>
               <%= post.dateCreated %>
               </span>
+              <div class="text-center" style="margin: top 5px;">
+                <a style="color:white" href="/post/edit/<%= post._id %>">Update</a>
+              </div>
+              <div class="text-center" style="margin: top 5px; background-color: white;">
+                <a onclick="return confirm('Are You Sure')" style="color:red" href="/post/<%= post._id %>?_method=DELETE">Delete</a>
+              </div>
           </div>
         </div>
       </div>
